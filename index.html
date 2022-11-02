@@ -22,6 +22,86 @@
         #wrap section {
             box-sizing:border-box;
         }
+        /*인포메이션 영역*/
+        .info_section {
+            order:1;
+            width:100%;
+            background:#2ecc71;
+            border-bottom:1px solid #39d67c;
+        }
+        .info_list {
+            display:flex;
+        }
+        .info_list li {
+            width:25%;
+            text-align:center;
+        }
+        .info_list li a {
+            display:block;
+            padding:15px 0;
+            padding:0.938rem 0;
+        }
+        /*헤더 영역*/
+        .header {
+            display:flex;
+            order:2;
+            flex-direction:column;
+            position:relative;
+            width:100%;
+        }
+
+        .logo {
+            order:1;
+            width:100%;
+            padding:30px 0;
+            padding:1.875rem 0;
+            font-size:1.188em;
+            font-size:1.188rem;
+            line-height:21px;
+            line-height:1.313rem;
+            text-align:center;
+            text-transform:uppercase;
+            background:#2ecc71;
+            text-shadow:0px 1px 1px #25ab5e;
+        }
+
+        .gnb li {
+            display:flex;
+            background:#2c3e50;
+        }
+        .gnb li a {
+            width:80%;
+            padding:20px 0;
+            padding:1.250rem 0;
+            font-size:0.938em;
+            font-size:0.938rem;
+            text-indent:20px;
+            text-indent:1.250rem;
+            font-weight:bold;
+            text-transform:uppercase;
+        }
+        .gnb li span {
+            width:20%;
+            text-indent:-9999px;
+            background:url(image/s_images/sub_menu_toggle_btn.png) center center no-repeat;
+            cursor:pointer;
+        }
+
+        .menu_toggle_btn {
+            display:block;
+            width:30px;
+            width:1.875rem;
+            height:30px;
+            height:1.875rem;
+            position:absolute;
+            top:10px;
+            top:0.625rem;
+            right:10px;
+            right:0.625rem;
+            text-indent:-9999px;
+            background:url(image/s_images/menu_toggle_btn.png) no-repeat;
+            cursor:pointer;
+        }
         /*태블릿용*/
         @media all and (min-width768px) {
             /*기본*/
@@ -35,6 +115,25 @@
             #wrap {
                 position:relative;
                 width:90%;
+            }
+            /*인포메이션 영역*/
+            .info_section {
+                order:0;
+                position:absolute;
+                top:30px;
+                right:30px;
+                right:1.875rem;
+                z-index:30;
+                width:auto;
+                border-bottom:0;
+            }
+            .info_list li {
+                width:auto;
+                margin-left:15px;
+                margin-left:0.625rem;
+            }
+            .info_list li a {
+                padding:0;
             }
         }
     </style>
