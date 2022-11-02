@@ -102,11 +102,145 @@
             background:url(image/s_images/menu_toggle_btn.png) no-repeat;
             cursor:pointer;
         }
+        /*슬라이더영역*/
+        .slider_section {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            order:3;
+            width:100%;
+            height:300px;
+            height:18.750rem;
+            background:url(image/p_images/slider_01.jpg) center center no-repeat;
+        }
+        .slider_section span {
+            width:34px;
+            width:2.125rem;
+            height:39px;
+            height:2.438rem;
+            text-indent:-9999px;
+            background:url(image/s_images/slider_arrow.png) no-repeat;
+            cursor:pointer;
+        }
+
+        span.prev_btn {
+            margin-left:-10px;
+            margin-left:-0.625rem;
+            background-position:0 0;
+        }
+        span.next_btn {
+            margin-right:-10px;
+            margin-right:-0.625rem;
+            background-position:-34px 0;
+        }
+        /* 최근글, 인기글 */
+        .latest_post_section {
+            order:4;
+            background:#ffc40f;
+            text-shadow:0px 1px 1px #b98e0b;
+        }
+
+        .popular_post_section {
+            order:5;
+            background:#a660c2;
+            text-shadow:0px 1px 1px #714185;
+        }
+
+        .latest_post_section, .popular_post_section {
+            padding:40px 12.5%;
+            padding:2.500rem 12.5%;
+        }
+
+        .title {
+            margin-bottom:30px;
+            margin-bottom: 1.875rem;
+            font-size:1.188em;
+            font-size:1.188rem;
+            text-align:center;
+            text-transform:uppercase;
+            color:#fff;
+        }
+
+        .latest_post_list li, .popular_post_list li {
+            margin-top:15px;
+            margin-top:0.938rem;
+            padding-left:14px;
+            padding-left:0.875rem;
+            font-weight:bold;
+            text-transform:uppercase;
+            background:url(image/s_images/post_circle_icon.png) left center no-repeat;
+        }
+        .latest_post_list li:first-child, .popular_post_list li:first-child {
+            margin-top:0;
+        }
         /*태블릿용*/
         @media all and (min-width768px) {
             /*기본*/
             #wrap {
                 flex-flow:row wrap;
+            }
+            /*헤더영역*/
+            .header {
+                flex-direction:row;
+            }
+
+            .logo {
+                position:absolute;
+                top:0;
+                left:0;
+                z-index:10;
+                width:15.625%;
+                padding:0;
+            }
+            .logo a {
+                display:block;
+                padding:50px 0;
+                padding:3.125rem 0;
+            }
+
+            .nav {
+                position:relative;
+                min-height:80px;
+                min-height:5.000rem;
+                background:#2ecc71;
+            }
+
+            .gnb {
+                position:absolute;
+                top:100%;
+                right:0;
+                z-index:20;
+                width:40.1041666666667%;
+            }
+
+            .menu_toggle_btn {
+                top:50%;
+                right:30px;
+                right:1.875rem;
+                z-index:20;
+                margin-top:-15px;
+                margin-top:-0.938rem;
+            }
+            /*슬라이더 영역*/
+            .slider_section {
+                width:59.89583333%;
+                height:auto;
+            }
+            .slider_section span {
+                position:relative;
+                z-index:10;
+            }
+            /* 최근글 인기글 영역 */
+            .latest_post_section {
+                order:5;
+            }
+            .popular_post_section {
+                order:6;
+            }
+            .latest_post_section, .popular_post_section {
+                width:41.66666667%;
+                padding-left:5.2083333333%;
+                padding-right:5.2083333333%;
             }
         }
         /*PC용*/
@@ -134,6 +268,63 @@
             }
             .info_list li a {
                 padding:0;
+            }
+
+            /*헤더용*/
+            .header {
+                order:1;
+                justify-content:flex-end;
+                position:static;
+            }
+
+            .logo {
+                width:12.5%;
+            }
+
+            .nav {
+                display:flex;
+                align-items: center;
+                position:static;
+                width:87.5%;
+            }
+
+            .gnb {
+                display:flex !important;
+                flex-direction:row;
+                position:static;
+                width:100%;
+                text-shadow:0px 1px 1px #25ab5e;
+            }
+            .gnb li {
+                display:block;
+                margin-left:5.20833333%;
+                background:none;
+            }
+            .gnb li a {
+                width:auto;
+                padding:0;
+                text-indent:0;
+            }
+            .gnb li span {
+                display:none;
+            }
+
+            .menu_toggle_btn {
+                display:none;
+            }
+            /*슬라이더 영역*/
+            .slider_section {
+                order:2;
+                width:50%;
+            }
+            /* 최근글 인기글 영역 */
+            .latest_post_section, .popular_post_section {
+                display:flex;
+                flex-direction: column;
+                align-items:center;
+                width:30%;
+                padding-left:0;
+                padding-right:0;
             }
         }
     </style>
@@ -178,12 +369,12 @@
         
         <section class = "popular_post_section">
             <h2 class = "title">인기글</h2>
+            <ul class = "popular_post_list">
                 <li><a href = "">안녕하세요</a></li>
                 <li><a href = "">홈페이지 리뉴얼</a></li>
                 <li><a href = "">flat design은...</a></li>
                 <li><a href = "">blog에서 다양한 정보를...</a></li>
                 <li><a href = "">저는 누굴까요?</a></li>
-            <ul class = "popular_post_list">
             </ul>
         </section>
 
