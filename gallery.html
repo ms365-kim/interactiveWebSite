@@ -22,16 +22,175 @@
         #wrap section {
             box-sizing:border-box;
         }
+        /* 콘텐츠영역 */
+        .gallery_list img {
+            width:100%;
+            max-width:100%;
+            border-radius:5px;
+            transition:all 0.4s;
+            -webkit-filter:grayscale(1);
+            filter:grayscale(1);
+        }
+        .gallery_list li {
+            margin-top:20px;
+            margin-top:1.250rem;
+        }
+        .gallery_list li:first-child {
+            margin-top:0;
+        }
+
+        .content_row_2 {
+            display:flex;
+            justify-content:space-between;
+            margin:30px 0 40px 0;
+            margin:1.875rem 0 2.500rem 0;
+        }
+
+        .search_window {
+            width:118px;
+            width:7.375rem;
+            height:28px;
+            height:1.750rem;
+            font-size:0.6888em;
+            font-size:0.6888rem;
+            line-height:28px;
+            line-height:1.750rem;
+            text-indent:10px;
+            text-indent:0.625rem;
+        }
+        .search_select_box {
+            display:none;
+        }
+
+        .write_box a {
+            display:block;
+            width:70px;
+            width:4.375rem;
+            height:30px;
+            height:1.875rem;
+            font-size:0.813em;
+            font-size:0.813rem;
+            line-height:30px;
+            line-height:1.875rem;
+            text-align:center;
+            color:#fff;
+            background:#e65d5d;
+        }
+
+        .content_row_3 {
+            display:flex;
+            jusify-content:center;
+        }
+        .content_row_3 span {
+            width:28px;
+            width:1.750rem;
+            height:28px;
+            height:1.750rem;
+            text-indent:-9999px;
+        }
+        .content_row_3 span.list_prev_btn {
+            margin-right:10px;
+            margin-right:0.625rem;
+            background:#2ecc71 url(image/s_images/list_prev_btn.png) center center no-repeat;
+        }
+        .content_row_3 span.list_next_btn {
+            margin-left:10px;
+            margin-left:0.625rem;
+            background:#2ecc71 url(image/s_images/list_next_btn.png) center center no-repeat;
+        }
+        .content_row_3 a {
+            width:26px;
+            width:1.625rem;
+            font-size:0.813em;
+            font-size:0.813rem;
+            line-height:26px;
+            line-height:1.625rem;
+            text-align:center;
+            border:1px solid #219af7;
+            color:#219af7;
+            transition:all 0.2s;
+        }
+        .content_row_3 a:nth-of-type(2) {
+            margin:0 6px;
+            margin:0 0.375rem;
+        }
+        .content_row_3 a:hover {
+            color:#fff;
+            background:#219af7;
+        }
+
+
         /*태블릿용*/
         @media all and (min-width:768px) {
-            
+            /* 컨텐츠 영역 */
+            .gallery_list {
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:space-between;
+            }
+            .gallery_list li {
+                width: 48.54651162790698%;;
+            }
+            .gallery_list li:nth-child(2) {
+                margin-top:0;
+            }
+
+            .search_select_box {
+                display:inline-block;
+                position:relative;
+            }
+            .search_select_box span {
+                display: inline-block;
+                width:80px;
+                width:5.000rem;
+                height:30px;
+                height:1.875rem;
+                font-size:0.813em;
+                font-size:0.813rem;
+                line-height: 28px;
+                line-height: 1.750rem;
+                text-align:center;
+                color: #fff;
+                background: #e65d5d;
+                cursor:pointer;
+            }
+            .search_select_list {
+                display:none;
+                position:absolute;
+                top:105%;
+                left:0;
+                width:100%;
+            }
+            .search_select_list li {
+                padding:6px 0;
+                padding: 0.375rem 0;
+                font-size: 0.750em;
+                font-size: 0.750rem;
+                text-indent: 10px;
+                text-indent:0.625rem;
+                color: #fff;
+                background: #e65d5d;
+                cursor:pointer;
+            }
+            .search_select_box:hover .search_select_list {
+                display:block;
+            }
         }
+
+
         /*PC용*/
         @media all and (min-width:960px) {
             /*기본*/
             #wrap {
                 position:relative;
                 width:90%;
+            }
+
+            /* 콘텐츠 영역 */
+            .gallery_list li {
+                width:23.92857142857143%;
+                margin-top:12px;
+                margin-top: 0.750rem;;
             }
         }
     </style>
