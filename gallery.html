@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>갤러리</title>
+    <title>FLAT DESIGN - 갤러리</title>
+    <link rel = "stylesheet" type = "text/css" href ="css/reset.css">
     <link rel = "stylesheet" type = "text/css" href ="">
-    <link rel = "stylesheet" type = "text/css" href ="">
-    <link rel = "shortcut icon" href = "">
-    <link rel = "apple-touch-icon-precomposed" href = "">
-    <scipt src = ""></scipt>
+    <link rel = "shortcut icon" href = "image/favicon/favicon.ico">
+    <link rel = "apple-touch-icon-precomposed" href = "image/">
+    <scipt src = "js/jquery.min.js"></scipt>
     <style>
         /*모바일용*/
         /*기본*/
@@ -22,7 +22,123 @@
         #wrap section {
             box-sizing:border-box;
         }
+        /*인포메이션 영역*/
+        .info_section {
+            order:1;
+            width:100%;
+            background:#2ecc71;
+            border-bottom:1px solid #39d67c;
+        }
+        .info_list {
+            display:flex;
+        }
+        .info_list li {
+            width:25%;
+            text-align:center;
+        }
+        .info_list li a {
+            display:block;
+            padding:15px 0;
+            padding:0.938rem 0;
+        }
+        /*헤더 영역*/
+        .header {
+            display:flex;
+            order:2;
+            flex-direction:column;
+            position:relative;
+            width:100%;
+        }
+
+        .logo {
+            order:1;
+            width:100%;
+            padding:30px 0;
+            padding:1.875rem 0;
+            font-size:1.188em;
+            font-size:1.188rem;
+            line-height:21px;
+            line-height:1.313rem;
+            text-align:center;
+            text-transform:uppercase;
+            background:#2ecc71;
+            text-shadow:0px 1px 1px #25ab5e;
+        }
+
+        .nav {
+            order:2;
+            width:100%;
+        }
+
+        .gnb li {
+            display:flex;
+            background:#2c3e50;
+        }
+        .gnb li a {
+            width:80%;
+            padding:20px 0;
+            padding:1.250rem 0;
+            font-size:0.938em;
+            font-size:0.938rem;
+            text-indent:20px;
+            text-indent:1.250rem;
+            font-weight:bold;
+            text-transform:uppercase;
+        }
+        .gnb li span {
+            width:20%;
+            text-indent:-9999px;
+            background:url(image/s_images/sub_menu_toggle_btn.png) center center no-repeat;
+            cursor:pointer;
+        }
+
+        .menu_toggle_btn {
+            display:block;
+            width:30px;
+            width:1.875rem;
+            height:30px;
+            height:1.875rem;
+            position:absolute;
+            top:10px;
+            top:0.625rem;
+            right:10px;
+            right:0.625rem;
+            text-indent:-9999px;
+            background:url(image/s_images/menu_toggle_btn.png) no-repeat;
+            cursor:pointer;
+        }
+
+        /* 서브헤더영역 */
+        .sub_header_section {
+            order:3;
+            padding:48px 0;
+            padding:3.000rem 0;
+            text-align:center;
+            background:#219af7;
+        }
+        .sub_header_section h2 {
+            margin-bottom:12px;
+            margin-bottom:0.750rem;
+            font-size:1.313em;
+            font-size:1.313rem;
+            color:#fff;
+        }
+
+        .breadcrum_list li {
+            display:inline;
+            font-size:0.813em;
+            font-size:0.813rem;
+            font-weight: bold;
+        }
+
         /* 콘텐츠영역 */
+        .content_section {
+            order:4;
+            padding:20px;
+            padding:1.250rem;
+            background: #fff;
+        }
+
         .gallery_list img {
             width:100%;
             max-width:100%;
@@ -31,6 +147,11 @@
             -webkit-filter:grayscale(1);
             filter:grayscale(1);
         }
+        .gallery_list img:hover {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+        }
+
         .gallery_list li {
             margin-top:20px;
             margin-top:1.250rem;
@@ -79,7 +200,7 @@
 
         .content_row_3 {
             display:flex;
-            jusify-content:center;
+            justify-content:center;
         }
         .content_row_3 span {
             width:28px;
@@ -117,6 +238,24 @@
         .content_row_3 a:hover {
             color:#fff;
             background:#219af7;
+        }
+
+        /* 푸터영역 */
+        .footer {
+            order:5;
+            width:100%;
+            background: #474747;
+        }
+        .footer p {
+            padding:20px;
+            padding:1.250rem;
+            font-size:0.813em;
+            font-size: 0.813rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0px 1px 1px #191919;
         }
 
 
@@ -192,22 +331,39 @@
                 margin-top:12px;
                 margin-top: 0.750rem;;
             }
+            .gallery_list li:nth-child(3), .gallery_list li:nth-child(4) {
+                margin-top:0;
+            }
         }
     </style>
 </head>
 <body>
     <div id = "wrap">
         <section class = "info_section">
-
+            <ul class = "info_list">
+                <li><a href = "index.html"><img src = "image/s_images/info_icon_01.png"></a></li>
+                <li><a href = ""><img src = "image/s_images/info_icon_02.png"></a></li>
+                <li><a href = ""><img src = "image/s_images/info_icon_03.png"></a></li>
+                <li><a href = ""><img src = "image/s_images/info_icon_04.png"></a></li>
+            </ul>
         </section>
         <header class = "header">
-
+            <h1 class = "logo"><a href = "index.html">flat<br>design</a></h1>
+            <nav class = "nav">
+                <ul class = "gnb">
+                    <li><a href = "index.html">HOME</a><span class = "sub_menu_toggle_btn">하위메뉴토글버튼</span></span></li>
+                    <li><a href = "introduce.html">플랫디자인이란?</a><span class = "sub_menu_toggle_btn">하위메뉴토글버튼</span></span></li>
+                    <li><a href = "gallery.html">갤러리</a><span class = "sub_menu_toggle_btn">하위메뉴토글버튼</span></span></li>
+                    <li><a href = "board.html">문의사항</a><span class = "sub_menu_toggle_btn">하위메뉴토글버튼</span></span></li>
+                </ul>
+            </nav>
+            <span class = "menu_toggle_btn">전체메뉴토글버튼</span>
         </header>
         <section class = "sub_header_section">
-            <h2>현재 페이지와 연결되어 있는 메뉴 이름</h2>
+            <h2>갤러리</h2>
             <ul class = "breadcrum_list">
                 <li><a href = "index.html">홈</a></li>
-                <li><a href = "현재 페이지 경로">현재 페이지와 연결되어 있는 메뉴 이름</a></li>
+                <li><a href = "gallery.html">갤러리</a></li>
             </ul>
         </section>
         <section class = "content_section">
@@ -258,7 +414,7 @@
             </div>
         </section>
         <footer class = "footer">
-            
+            <p>copyright&copy; 2022.flat design blog all rights reserved</p>
         </footer>
     </div>
 </body>
